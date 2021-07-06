@@ -22,7 +22,7 @@ import  { counter2 } from './counter2'
  * with the Store instance.
  */
 
-export interface StateInterface {
+export interface IRootState {
   // Define your own store structure, using submodules if needed
   // example: ExampleStateInterface;
   // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
@@ -33,15 +33,15 @@ export interface StateInterface {
 // provide typings for `this.$store`
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $store: VuexStore<StateInterface>
+    $store: VuexStore<IRootState>
   }
 }
 
 // provide typings for `useStore` helper
-export const storeKey: InjectionKey<VuexStore<StateInterface>> = Symbol('vuex-key')
+export const storeKey: InjectionKey<VuexStore<IRootState>> = Symbol('vuex-key')
 
 export default function() {
-  const Store = createStore<StateInterface>({
+  const Store = createStore<IRootState>({
     modules: {
       counter,
       counter2

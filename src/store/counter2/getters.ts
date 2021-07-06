@@ -1,5 +1,5 @@
 import { GetterTree } from 'vuex';
-import { StateInterface } from '../index';
+import { IRootState } from '../index';
 import { State } from './state';
 
 export enum GetterType {
@@ -7,10 +7,10 @@ export enum GetterType {
 }
 
 export type Getter = {
-  [GetterType.GetCounterValue](state: StateInterface): number
+  [GetterType.GetCounterValue](state: IRootState): number
 }
 
-export const getters: GetterTree<State, StateInterface> = {
+export const getters: GetterTree<State, IRootState> = {
   getCounterValue (state) {
     return state.counterValue
   }

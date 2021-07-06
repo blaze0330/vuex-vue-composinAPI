@@ -1,6 +1,9 @@
 <template>
   <div class="row">
-    <p>Counter: {{ counter }}</p>
+    <div class="colmn">
+      <p>Counter: {{ counter }}</p>
+      <p>Counter with offset of 2: {{ counterWithOffset }}</p>
+    </div>
     <q-btn @click="counter++">Count up</q-btn>
   </div>
     <div class="row">
@@ -22,8 +25,15 @@ export default defineComponent({
     const $store = useStore()
 
     let counter = computed({
-      get: () => $store.getters['counter/getCounterValue'], //Direct access: $store.state.counter.counterValue
+      get: () => { console.log($store.getters)
+        return $store.getters['counter/getCounterValue'] //Direct access: $store.state.counter.counterValue
+        },
       set: () => $store.dispatch('counter/countUp')
+    })
+
+    let counterWithOffset = computed({
+      get: () => $store.getters['counter/getCounterValueWithOffset'](2),
+      set: () => {}
     })
 
     let counter2 = computed({
@@ -31,7 +41,7 @@ export default defineComponent({
       set: () => $store.dispatch('counter2/countUp')
     })
 
-    return { counter, counter2 }
+    return { counter, counter2, counterWithOffset }
   }
 });
 </script>

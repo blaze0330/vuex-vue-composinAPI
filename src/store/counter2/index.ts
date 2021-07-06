@@ -1,5 +1,5 @@
 import { Module, Store as VuexStore, CommitOptions, DispatchOptions } from 'vuex';
-import { StateInterface } from '../index';
+import { IRootState } from '../index';
 import { state, State } from './state';
 import { actions, ActionType } from './actions';
 import { getters, Getter } from './getters';
@@ -29,7 +29,7 @@ export type ModuleTypes<S = State> = Omit<
   ): ReturnType<ActionType[K]>;
 };
 
-export const counter2: Module<State, StateInterface> = {
+export const counter2: Module<State, IRootState> = {
   namespaced: true,
   actions,
   getters,

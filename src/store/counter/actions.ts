@@ -1,9 +1,9 @@
 import { ActionContext, ActionTree } from 'vuex';
-import { StateInterface } from '../index';
+import { IRootState } from '../index';
 import { State } from './state';
 import { MutationType, MutationName } from './mutations'
 
-type ActionArgument = Omit<ActionContext<State, StateInterface>, 'commit'> & {
+type ActionArgument = Omit<ActionContext<State, IRootState>, 'commit'> & {
   commit<K extends keyof MutationType>(
     key: K,
     payload: Parameters<MutationType[K]>[1]
@@ -18,7 +18,7 @@ export type ActionType = {
   [ActionName.CountUp](context: ActionArgument): void
 }
 
-export const actions: ActionTree<State, StateInterface> = {
+export const actions: ActionTree<State, IRootState> = {
   [ActionName.CountUp]({ commit }, payload: number) {
     commit(MutationName.CountUp, payload)
   }
