@@ -4,7 +4,7 @@ Vuex example with Vue 3, TypeScript, Composition API and Quasar with namespaced 
 
 ## Install the dependencies
 ```bash
-yarn
+yarn install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
