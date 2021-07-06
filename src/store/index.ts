@@ -7,8 +7,8 @@ import {
 } from 'vuex'
 import { State as CounterState } from './counter/state'
 import { State as CounterState2 } from './counter2/state'
-import  { counterStore, ModuleTypes as CounterStoreModuleTypes } from './counter'
-import  { counterStore2 } from './counter2'
+import  { counter, ModuleTypes as CounterStoreModuleTypes } from './counter'
+import  { counter2 } from './counter2'
 
 // import example from './module-example'
 // import { ExampleStateInterface } from './module-example/state';
@@ -26,8 +26,8 @@ export interface StateInterface {
   // Define your own store structure, using submodules if needed
   // example: ExampleStateInterface;
   // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
-  counterStore: CounterState
-  counterStore2: CounterState2
+  counter: CounterState
+  counter2: CounterState2
 }
 
 // provide typings for `this.$store`
@@ -43,8 +43,8 @@ export const storeKey: InjectionKey<VuexStore<StateInterface>> = Symbol('vuex-ke
 export default function() {
   const Store = createStore<StateInterface>({
     modules: {
-      counterStore,
-      counterStore2
+      counter,
+      counter2
     },
 
     // enable strict mode (adds overhead!)

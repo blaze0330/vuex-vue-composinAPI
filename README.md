@@ -1,6 +1,6 @@
-# Quasar App (vuex-test)
+# Quasar App (vuex-vue3-typescript-compositionapi-example)
 
-A Quasar Framework app
+Vuex example with Vue 3, TypeScript, Composition API and Quasar with namespaced vuex store modules
 
 ## Install the dependencies
 ```bash
@@ -9,7 +9,7 @@ yarn
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn dev
 ```
 
 ### Lint the files

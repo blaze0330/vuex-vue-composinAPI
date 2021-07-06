@@ -1,17 +1,17 @@
 import { MutationTree } from 'vuex';
 import { State } from './state';
 
-export enum MutationType {
-  CountUp = 'countUp'
+export enum MutationName {
+  CountUp = 'COUNT_UP'
 }
 
-export type Mutation = {
-  [MutationType.CountUp](state: State): void
+export type MutationType = {
+  [MutationName.CountUp](state: State): void
 }
 
 export const mutations: MutationTree<State> = {
-  [MutationType.CountUp](state) {
-    state.counterVar++
+  [MutationName.CountUp](state) {
+    state.counterValue++
   }
 };
 

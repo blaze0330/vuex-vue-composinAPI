@@ -1,7 +1,7 @@
 {
-  "name": "vuex-test",
+  "name": "vuex-vue3-typescript-compositionapi-example",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "Vuex example with Vue 3, Typescript, Composition API and Quasar",
   "productName": "Quasar App",
   "author": "MatiasG19 <m.galusek@outlook.com>",
   "private": true,

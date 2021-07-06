@@ -12,7 +12,7 @@ export type Getter = {
 
 export const getters: GetterTree<State, StateInterface> = {
   getCounterValue (state) {
-    return state.counterVar
+    return state.counterValue
   }
 };
 

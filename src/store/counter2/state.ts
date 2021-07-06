@@ -1,9 +1,9 @@
 export type State = {
-  counterVar: number;
+  counterValue: number;
 }
 
 export function state(): State {
   return {
-    counterVar: 0
+    counterValue: 0
   }
 };
