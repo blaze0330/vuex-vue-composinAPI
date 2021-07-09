@@ -25,9 +25,7 @@ export default defineComponent({
     const $store = useStore()
 
     let counter = computed({
-      get: () => { console.log($store.getters)
-        return $store.getters['counter/getCounterValue'] //Direct access: $store.state.counter.counterValue
-        },
+      get: () => $store.getters['counter/getCounterValue'], //Direct access: $store.state.counter.counterValue
       set: () => $store.dispatch('counter/countUp')
     })
 
