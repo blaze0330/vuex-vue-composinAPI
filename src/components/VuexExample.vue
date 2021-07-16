@@ -29,10 +29,7 @@ export default defineComponent({
       set: () => $store.dispatch('counter/countUp')
     })
 
-    let counterWithOffset = computed({
-      get: () => $store.getters['counter/getCounterValueWithOffset'](2),
-      set: () => {}
-    })
+    let counterWithOffset = computed(() => $store.getters['counter/getCounterValueWithOffset'](2))
 
     let counter2 = computed({
       get: () => $store.getters['counter2/getCounterValue'], //Direct access: $store.state.counter2.counterValue
